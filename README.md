@@ -26,22 +26,26 @@ Ensure you have `uv` and `Jupyter` installed.
    ```bash
    git clone <your-repo-url>
    cd system-design-rag
+   ```
 
 2. **Configure Environment Variables:**
 Create a .env file in the root directory and add your API key:
 
     ```bash
     GEMINI_API_KEY=your_google_gemini_api_key
+    ```
 
-Note: Obtain your key from Google AI Studio.
+    Note: Obtain your key from Google AI Studio.
 
 3. **Install Dependencies:**
 
     ```bash
     uv add sentence_transformers chromadb google-genai python-dotenv
+    ```
 
 4. **Prepare Data:**
-Place your study materials (e.g., Alex Xu notes, System Design Primer, Tech Blogs) as .md files into the /data folder.
+
+    Place your study materials (e.g., Alex Xu notes, System Design Primer, Tech Blogs) as .md files into the /data folder.
 
 ## 🏃 Method of Operation
 
@@ -49,19 +53,26 @@ Place your study materials (e.g., Alex Xu notes, System Design Primer, Tech Blog
 
     ```bash
     uv run --with jupyter jupyter lab
+    ```
+
 2. **Ingestion:**
-Run the ingestion cells to parse headers, generate embeddings, and populate the ChromaDB collection.
+
+    Run the ingestion cells to parse headers, generate embeddings, and populate the ChromaDB collection.
 
 3. **Query:**
-Use the ask_system_design_expert function to simulate a mock interview or clarify complex distributed systems concepts.
+
+    Use the ask_system_design_expert function to simulate a mock interview or clarify complex distributed systems concepts.
 
 ## 📂 Project Structure
-Plaintext
+
+```bash
+.
 ├── data/               # Source Markdown files for study
 ├── system_design_db/   # Persistent ChromaDB vector storage
 ├── .env                # Private API credentials (ignored by git)
 ├── .gitignore          # Prevents leaking .env and DB files
 └── main.ipynb          # Core RAG logic and chat interface
+```
 
 ## ⚖️ License
 MIT License - Feel free to use this for your own SDE interview preparation!
